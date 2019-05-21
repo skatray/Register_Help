@@ -59,6 +59,9 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
@@ -70,6 +73,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telegram.Bot, Version=14.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telegram.Bot.14.11.0\lib\net45\Telegram.Bot.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddToIgnoreList.cs">
@@ -84,6 +90,13 @@
     <Compile Include="Comment.Designer.cs">
       <DependentUpon>Comment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Csv_create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Csv_create.Designer.cs">
+      <DependentUpon>Csv_create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dro1c.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,11 +131,15 @@
       <DependentUpon>resaut.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Telegram_bot.cs" />
     <EmbeddedResource Include="AddToIgnoreList.resx">
       <DependentUpon>AddToIgnoreList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comment.resx">
       <DependentUpon>Comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Csv_create.resx">
+      <DependentUpon>Csv_create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -163,9 +180,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Blue Velvet Icon 02.ico" />
     <Content Include="Blue Velvet Icon 100.ico" />
     <Content Include="Blue Velvet Icon 101.ico" />
+    <Content Include="Properties\style.css" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

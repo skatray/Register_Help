@@ -52,24 +52,17 @@ namespace WindowsFormsApplication2
             proverka_bd();
             comboBox1.SelectedIndex = 4;
             read_file();
-
-           
-
-
-
-
+            
         }
 
-        void proverka_bd()
+        public void proverka_bd()
         {
 
             try
             {
                 System.IO.StreamReader file = new System.IO.StreamReader(@"option.ini", true);
-
                 _file_path += file.ReadLine();
                 file.Close();
-
                 if(_file_path=="")
                 {                   
                     File.Delete("option.ini");
@@ -79,13 +72,15 @@ namespace WindowsFormsApplication2
             }
             catch
             {
-                using (FileStream fs = File.Create("option.ini"))
+                 using (FileStream fs = File.Create("option.ini"))
                 {
-                    openFileDialog1.ShowDialog();
-
+                    //    openFileDialog1.ShowDialog();
+                    openFileDialog1.FileName = "Указать любой Excel (.xls) документ";
+                    openFileDialog1.Filter = "формат эксель(*.xls)|*.xls|All files (*.*)|*.*";
                     if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         Byte[] info = new UTF8Encoding(true).GetBytes(openFileDialog1.FileName);
+                        
                         // Add some information to the file.
                         fs.Write(info, 0, info.Length);
                     }
@@ -379,30 +374,30 @@ namespace WindowsFormsApplication2
 
         private void проверкаАккаунтовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Csv_create f = new Csv_create();
+            f.Show();
+            
+            /*
             _count = 0;
-            _ban = 0;
-         //   proverka_bd();
+            _ban = 0;         
             proverka_na_akt();
             Progressbar prog = new Progressbar();
             prog.max = niks.Count;
             prog.Show(this);
-
-   //         for (int i = 1; i < niks.Count; i++)
-   //         {
-    //            status_akka(niks.ElementAt(i));
-  //              prog.value = 3;
-    //            prog.Refresh();
-                
-      //      }
-       
+       */
         }
 
         private void открытьExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try { 
             var excelapp = new Excel.Application();
-            excelapp.Visible = true;
-            excelapp.Workbooks.Open(_file_path);
+                excelapp.Workbooks.Open(_file_path);
+                excelapp.Visible = true;            
+            }
+            catch
+            {
+                proverka_bd();
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

@@ -376,13 +376,38 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "@mail.ru",
+            "@mail.ua",
             "@list.ru",
+            "-----",
             "@hotline.com",
             "@aol.net",
+            "-----",
+            "@seznam.cz",
+            "@email.cz",
             "@post.cz",
+            "-----",
             "@gmx.com",
             "@gmx.us",
-            "@freemail.hu"});
+            "-----",
+            "@onet.pl",
+            "@op.pl",
+            "@adres.pl",
+            "@vp.pl",
+            "@onet.eu",
+            "@cyberia.pl",
+            "@pseudonim.pl",
+            "@autograf.pl",
+            "@opoczta.pl",
+            "@spoko.pl",
+            "@freemail.hu",
+            "-----",
+            "@i.ua",
+            "@ua.fm",
+            "@email.ua",
+            "-----",
+            "@hotline.com",
+            "@aol.net",
+            "-----"});
             this.comboBox1.Location = new System.Drawing.Point(12, 142);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(213, 21);
